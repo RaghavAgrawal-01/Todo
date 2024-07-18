@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="text-center">ToDo List</h1>
+    <div class="table-responsive">
+        <table class="table table-hover mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Buy groceries</td>
+                    <td>Pending</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm">Complete</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Call plumber</td>
+                    <td>Completed</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm">Complete</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Finish project report</td>
+                    <td>Pending</td>
+                    <td>
+                        <button type="button" class="btn btn-success btn-sm">Complete</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{% url 'add_todo' %}" class="btn btn-primary mb-3">Add Todo</a>
+
+</div>
+
+{% endblock %}
