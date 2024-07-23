@@ -18,7 +18,8 @@ def todo(request):
 	
 	parameters = {
 		"todos": todos,
-		"name": "This is Raghav"
+		# "name": "This is Raghav"
+		# "total_todo": len(todos) # another method their is no need to display and write we write simple in html file {{ todos.count }}
 	}
 
 	return render(request, "todo.html", parameters)
