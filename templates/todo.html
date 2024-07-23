@@ -3,27 +3,46 @@
 {% block body %}
 
 <div class="container mt-5">
-    <h1 class="text-center">ToDo List</h1>
+    <h1 class="text-center">ToDo List -> {{ name }}</h1>
     <div class="table-responsive">
+
+        <!-- <h4>This is a simple task by Raghav</h4>
+        <h4>This is an another task</h4> -->
+        
+        <!-- {% for todo in todos %}
+            <h4>
+                {{ forloop.counter }}. {{ todo.task }}
+            </h4>
+
+        {% endfor %} -->
+
+        
         <table class="table table-hover mt-3">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Task</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
+
+                {% for todo in todos %}
+
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Buy groceries</td>
-                    <td>Pending</td>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ todo.task }}</td>
+                    <td>{{ todo.created_at }}</td>
                     <td>
                         <button type="button" class="btn btn-success btn-sm">Complete</button>
                         <button type="button" class="btn btn-danger btn-sm">Delete</button>
                     </td>
                 </tr>
+
+                {% endfor %}
+
+<!-- 
                 <tr>
                     <th scope="row">2</th>
                     <td>Call plumber</td>
@@ -41,7 +60,8 @@
                         <button type="button" class="btn btn-success btn-sm">Complete</button>
                         <button type="button" class="btn btn-danger btn-sm">Delete</button>
                     </td>
-                </tr>
+                </tr> -->
+
             </tbody>
         </table>
     </div>

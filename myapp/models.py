@@ -8,3 +8,5 @@ class Todo(models.Model):
 	created_at = models.DateField()
 
 
+# Schema -> python manage.py makemigrations
+#model-> schema -> migrate
